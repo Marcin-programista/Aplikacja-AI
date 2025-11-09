@@ -1,0 +1,60 @@
+/* Dodatkowe style uzupełniające Materialize */
+
+/* Animacje dodawania/usuwania */
+.task-item.added {
+  animation: fadeIn 250ms ease-out;
+}
+.task-item.removed {
+  animation: fadeOut 250ms ease-in forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeOut {
+  from { opacity: 1; height: 64px; }
+  to   { opacity: 0; height: 0; margin: 0; padding: 0; }
+}
+
+/* Kolory priorytetów */
+.badge-priority {
+  margin-left: 6px;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+.priority-low    { background: #e8f5e9; color: #2e7d32; }  /* zielony */
+.priority-medium { background: #fff8e1; color: #f57f17; }  /* żółty */
+.priority-high   { background: #ffebee; color: #c62828; }  /* czerwony */
+
+/* Zakończone */
+.task-completed .task-title {
+  text-decoration: line-through;
+  color: #9e9e9e;
+}
+.task-completed .task-meta {
+  color: #9e9e9e;
+}
+
+/* Przeterminowane */
+.overdue .task-title::after {
+  content: " • przeterminowane";
+  color: #c62828;
+  font-weight: 600;
+}
+
+/* Tag/kategoria bubble */
+.task-tags .chip {
+  margin-top: 6px;
+  margin-right: 6px;
+}
+
+/* Ułatwienia widoczności przycisków w liście */
+.collection .secondary-content .btn-small {
+  vertical-align: middle;
+}
+
+#emptyState i {
+  display: block;
+}
